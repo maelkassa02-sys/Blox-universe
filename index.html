@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox Games Hub</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+header {
+    text-align: center;
+    padding: 30px;
+}
+header h1 {
+    color: #38bdf8;
+    font-size: 2.5em;
+}
+.search-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.search-box input {
+    padding: 10px;
+    width: 60%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    background: #1e293b;
+    border-radius: 15px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56,189,248,0.5);
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+.card h2 {
+    color: #facc15;
+}
+button {
+    background: #38bdf8;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover {
+    background: #0ea5e9;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background: #020617;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🎮 Roblox Games Hub</h1>
+    <p>Découvre les meilleurs jeux Roblox 🔥</p>
+</header>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Rechercher un jeu..." onkeyup="searchGame()">
+</div>
+
+<div class="container" id="games">
+
+<div class="card">
+    <img src="https://tr.rbxcdn.com/180DAY-aaa/brookhaven.jpg" alt="Brookhaven">
+    <h2>Brookhaven</h2>
+    <p>Vis une vie RP, achète une maison et explore.</p>
+    <button onclick="alert('Lancement du jeu...')">Jouer</button>
+</div>
+
+<div class="card">
+    <img src="https://tr.rbxcdn.com/180DAY-aaa/bloxfruits.jpg" alt="Blox Fruits">
+    <h2>Blox Fruits</h2>
+    <p>Deviens puissant avec des fruits spéciaux et combats.</p>
+    <button onclick="alert('Lancement du jeu...')">Jouer</button>
+</div>
+
+<div class="card">
+    <img src="https://tr.rbxcdn.com/180DAY-aaa/adoptme.jpg" alt="Adopt Me">
+    <h2>Adopt Me!</h2>
+    <p>Adopte et élève des animaux rares.</p>
+    <button onclick="alert('Lancement du jeu...')">Jouer</button>
+</div>
+
+<div class="card">
+    <img src="https://tr.rbxcdn.com/180DAY-aaa/doors.jpg" alt="Doors">
+    <h2>Doors</h2>
+    <p>Survis à un jeu d'horreur rempli de mystères.</p>
+    <button onclick="alert('Lancement du jeu...')">Jouer</button>
+</div>
+
+</div>
+
+<footer>
+    <p>©️ 2026 Roblox Fan Site - Créé par toi 😎</p>
+</footer>
+
+<script>
+function searchGame() {
+    let input = document.getElementById('search').value.toLowerCase();
+    let cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        let title = card.querySelector('h2').textContent.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
